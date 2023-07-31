@@ -10,7 +10,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).send("Success!");
 });
-app.use("/public/images", express.static("public/images"));
+app.use(express.static("public"));
 async function run() {
   try {
     // app.use(express.static("public"));
