@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 require("dotenv").config();
 // midleware
 const app = express();
@@ -8,12 +8,12 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Server is running on port", PORT);
+  res.status(200).send("Success!");
 });
 
 async function run() {
   try {
-    // app.use(express.static("public"));
+    app.use(express.static("public"));
   } finally {
     // app.use(express.static("public"));
   }
